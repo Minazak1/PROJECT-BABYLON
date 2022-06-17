@@ -1,54 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PROJECT BABYLON</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
-  <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-        animation: fadeInAnimation ease 6s;
-        animation-iteration-count: 1;
-        animation-fill-mode: forwards;
-    }
-    @keyframes fadeInAnimation {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/blotter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Blotter/0.1.0/materials/fliesMaterial.js"></script>
+    <script src="babylon.js"></script>
 </head>
-
 <body>
-  <section class="babylon">
-    <div>
-      <div class="countdown">
-        <div class="container-day">
-          <h3 class="day">Time</h3>
-          <h3>Day</h3>
-        </div>
-        <div class="container-hour">
-          <h3 class="hour">Time</h3>
-          <h3>hour</h3>
-        </div>
-        <div class="container-minute">
-          <h3 class="minute">Time</h3>
-          <h3>minute</h3>
-        </div>
-        <div class="container-second">
-          <h3 class="second">Time</h3>
-          <h3>Second</h3>
-        </div>
-      </div>
-    </div>
-    <p1 class="desc">sometimes we dont know whats coming</p1>
-  </section>
-  <script src="app.js"></script>
-</body>
+    <body>
+        <div id="text"></div>
+        <section class="babylon">
+            <div>
+              <div class="countdown">
+                <div class="container-day">
+                  <h3 class="day">Time</h3>
+                  <h3>Day</h3>
+                </div>
+                <div class="container-hour">
+                  <h3 class="hour">Time</h3>
+                  <h3>hour</h3>
+                </div>
+                <div class="container-minute">
+                  <h3 class="minute">Time</h3>
+                  <h3>minute</h3>
+                </div>
+                <div class="container-second">
+                  <h3 class="second">Time</h3>
+                  <h3>Second</h3>
+                </div>
+              </div>
+            </div>
+            <p1 class="desc">sometimes we dont know whats coming</p1>
+          </section>
+          <script src="app.js"></script>
+   <div id="text"></div>
+   <script class="babe">
+       var innerText = document.getElementById("text");
+       var text = new Blotter.Text("Babylon",{
+           family: 'Monument',
+           size: 200,
+           fill: 'white',
+           paddingLeft: 0,
+           paddingRight: 0,
+           paddingTop: 100,
+           paddingBottom: 0,
+           
+       });
 
+       let material = new Blotter.FliesMaterial();
+
+       material.uniforms.uPointCellWidth.value = 0.012;
+       material.uniforms.uPointRadius.value = 0.5;
+       material.uniforms.uSpeed.value = 3;
+       material.uniforms.uDodge.value = 0;
+
+    //    These all properties u can set on Blotter.js Materials Documentation 
+
+    let blotter = new Blotter( material, {
+        texts: text
+    })
+
+    let scope = blotter.forText(text);
+    scope.appendTo(innerText);
+
+    
+   </script>
+</body>
 </html>
