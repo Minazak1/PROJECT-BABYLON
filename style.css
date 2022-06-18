@@ -68,6 +68,7 @@
 
 }
 .b-canvas{
+  margin-bottom: 300px;
   opacity: 75%;
   animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
