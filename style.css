@@ -68,7 +68,7 @@
 
 }
 .b-canvas{
-  opacity: 50%;
+  opacity: 75%;
   animation: fadeIn 5s;
   -webkit-animation: fadeIn 5s;
   -moz-animation: fadeIn 5s;
@@ -78,25 +78,25 @@
 }
 @keyframes fadeIn {
   0% { opacity: 0; }
-  50% { opacity: 1; }
+  75% { opacity: 1; }
 }
 
 @-moz-keyframes fadeIn {
   0% { opacity: 0; }
-  50% { opacity: 1; }
+  75% { opacity: 1; }
 }
 
 @-webkit-keyframes fadeIn {
   0% { opacity: 0; }
-  50% { opacity: 1; }
+  75% { opacity: 1; }
 }
 
 @-o-keyframes fadeIn {
   0% { opacity: 0; }
-  50% { opacity: 1; }
+  75% { opacity: 1; }
 }
 
 @-ms-keyframes fadeIn {
   0% { opacity: 0; }
-  50% { opacity: 1; }
+  75% { opacity: 1; }
 }
